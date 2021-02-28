@@ -162,8 +162,8 @@ SURPRESS_WARNING LL new_set_tid_address(int * tidptr){
 }
 
 //int unshare(int flags);
-SURPRESS_WARNING asmlinkage int (*old_unshare)(int flags);
-SURPRESS_WARNING int new_unshare(int flags)
+SURPRESS_WARNING asmlinkage LL (*old_unshare)(int flags);
+SURPRESS_WARNING LL new_unshare(int flags)
 {
    if(isUserPid()){
       printk("myLog::unshare flags:[%d]\n", flags);
@@ -232,6 +232,20 @@ int __init myInit(void){
 }
 
 void __exit myExit(void){
+   if(sys_call_table64){
+      printk("myLog::cleanup start\n");
+      sys_call_table64[__NR_openat] = (void*)old_openat64;
+      sys_call_table64[__NR_ptrace] = (void*)old_ptrace64;
+      sys_call_table64[__NR_kill] = (void*)old_kill64;
+      sys_call_table64[__NR_tkill] = (void*)old_tkill64;
+      sys_call_table64[__NR_tgkill] = (void*)old_tgkill64;
+      sys_call_table64[__NR_exit] = (void*)old_exit64;
+      sys_call_table64[__NR_execve] = (void*)old_execve64;
+      sys_call_table64[__NR_clone] = (void*)old_clone64;
+      sys_call_table64[__NR_set_tid_address] = (void*)old_set_tid_address;
+      sys_call_table64[__NR_unshare] = (void*)old_unshare;
+      printk("myLog::cleanup finish\n");
+   }
    printk("myLog::hooksyscall Quited\n");
 }
 module_init(myInit);
