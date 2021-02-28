@@ -20,7 +20,7 @@ Testing Environment
 Advantage
 ---
 
-- capturing prefer syscall on a living device, lower the posibility of being detected comparing to emulator(unicorn)
+- capturing your prefer syscall on a living device, lower the posibility of being detected comparing to emulator(unicorn)
 
 Reconfig Your kernel first
 ---
