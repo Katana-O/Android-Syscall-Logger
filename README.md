@@ -1,7 +1,7 @@
 Android-Syscall-Logger
 ---
 
-​	A kernel module that hook some of your system call on your Android Device by rewriting  syscall table.
+​	A kernel module that hook some of your system call on your Android Device by rewriting syscall table.
 
 Prerequisite
 ---
@@ -16,6 +16,11 @@ Testing Environment
 
 - OS: Kali Linux (I personly recommend you use Kali Linux as I do, since it look way damn good than Ubuntu)
 - Android Linux Kernel version: 3.18.70-g1292056
+
+Advantage
+---
+
+- capturing prefer syscall on a living device, lower the posibility of being detected comparing to emulator(unicorn)
 
 Reconfig Your kernel first
 ---
