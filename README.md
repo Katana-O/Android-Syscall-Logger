@@ -11,10 +11,11 @@ Prerequisite
 - Root Access
 - Set CONFIG_DEBUG_RODATA to false so you are allowable to rewrite the syscall table.
 
-Environment
+Testing Environment
 ---
 
-- I personly recommend you use Kali Linux as I do, since it look way damn good than Ubuntu
+- OS: Kali Linux (I personly recommend you use Kali Linux as I do, since it look way damn good than Ubuntu)
+- Android Linux Kernel version: 3.18.70-g1292056
 
 Reconfig Your kernel first
 ---
