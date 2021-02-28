@@ -27,7 +27,7 @@ Reconfig Your kernel first
 - make menuconfig
 - ************************************************************************************************
 - A Gui based menu will pop up on you screen. 
-- ![5](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/7.png)
+- ![5](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/7.png)
 - I recommend you use the following setings as I do.
 - CONFIG_MODULES=Y
 - CONFIG_STRICT_MEMORY_RWX=N / CONFIG_DEBUG_RODATA=N
@@ -43,35 +43,35 @@ Reconfig Your kernel first
 - CONFIG_FTRACE=Y
 - ************************************************************************************************
 - You might ask how to find each of these settings? Tab / , and you shall see a search bar upcoming. Copy it, paste it, and find it.
-- ![8](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/8.png)
-- ![9](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/9.png)
+- ![8](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/8.png)
+- ![9](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/9.png)
 - Once you finish your editing, run make command again which would create a kernel Image and then flash it to your device. 
-- ![10](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/10.png)	
+- ![10](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/10.png)	
 - Like this:
-- ![11](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/11.png)
+- ![11](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/11.png)
 - Check if your kernel is modified.
-- ![13](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/13.png)
+- ![13](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/13.png)
 ## Compile & Usage
 
 
 1. Excellent, I suppose you have reconfigured your kernel already. We can finally launch our missile~
 2. First of all, let take a little adjustment on your Makefile
-3. ![1](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/1.png)
+3. ![1](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/1.png)
 4. Reset your sys_call_table address by reading /proc/kallsyms, if it shows 0 to you. [echo 0 > /proc/sys/kernel/kptr_restrict] should reveal their true address instead of 0.
-5. ![6](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/6.png)
+5. ![6](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/6.png)
 6. Run make to compile the code. Which it should create a file that ends with .ko, that's your kernel module.
 7. push kernel module to a certain directory at your phone.
-8. ![2](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/2.png)
+8. ![2](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/2.png)
 9. Initialize your module immediately by using [insmod xxxx.ko]
-10. ![3](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/3.png)
+10. ![3](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/3.png)
 11. Starting monitoring your log from kernel by using [dmesg -w | grep "myLog"]
-12. ![4](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/4.png)
+12. ![4](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/4.png)
 13. Enjoy your pleasure.
-14. ![5](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/5.png)
+14. ![5](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/5.png)
 
 ## FAQ
 - where I place my project and my kernel?
-![14](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/images/14.png)
+![14](https://github.com/Katana-O/Android-Syscall-Logger/blob/main/pic/14.png)
 
 ## Credits
 - https://github.com/OWASP/owasp-mstg/blob/master/Document/0x04c-Tampering-and-Reverse-Engineering.md
