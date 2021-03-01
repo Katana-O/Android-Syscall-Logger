@@ -6,7 +6,7 @@ Android-Syscall-Logger
 Prerequisite
 ---
 
-- pixel 1
+- Supported Devices: Pixel(Tested), Pixel 2 XL, Pixel 2, Pixel XL, Pixel C, Nexus 6P, Nexus 5X
 - android-8.1.0_r1 == OPM1.171019.011
 - Root Access
 - Set CONFIG_DEBUG_RODATA to false so you are allowable to rewrite the syscall table.
